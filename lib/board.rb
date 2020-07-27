@@ -31,7 +31,7 @@ class Board
   end
 
   def self.game_draw
-    'Game over & it is a draw!!' if @@positions.none?(Integer)
+    'Game over & it is a draw!!'
   end
 
   def self.make_move(move, mark)
