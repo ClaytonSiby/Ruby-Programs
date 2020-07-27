@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../lib/player'
-
 # board class definition
 class Board
   @@positions = (1..9).to_a
@@ -12,9 +10,9 @@ class Board
   def self.draw_board
     "
     #{@@positions[0]} | #{@@positions[1]} | #{@@positions[2]}
-    =======
+    ========
     #{@@positions[3]} | #{@@positions[4]} | #{@@positions[5]}
-    =======
+    ========
     #{@@positions[6]} | #{@@positions[7]} | #{@@positions[8]}
     "
   end
@@ -32,7 +30,7 @@ class Board
     @@positions[move - 1].is_a?(Integer)
   end
 
-  def self.draw
+  def self.game_draw
     'Game over & it is a draw!!' if @@positions.none?(Integer)
   end
 
@@ -43,11 +41,4 @@ class Board
 
     @@positions[move - 1] = mark
   end
-
-  def self.reset_board
-    @@positions.size.times { |el| @@positions[el] = el + 1 }
-  end
 end
-
-puts Board.make_move(1, 'x')
-puts Board.make_move(1, 'x')
