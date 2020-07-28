@@ -55,7 +55,7 @@ first_player = Player.new(name_players, 'X')
 puts 'Second player please enter your name >> '
 second_player = Player.new(name_players, 'O')
 
-puts "Game's gonna be between #{first_player.name} (X) & #{second_player.name} (O). Good luck!!!"
+puts "Game's gonna be between #{first_player.name} (X) & #{second_player.name} (O). Good luck!!! \n\n"
 
 loop do
   game_over = false
