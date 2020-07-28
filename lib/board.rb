@@ -1,19 +1,17 @@
-# frozen_string_literal: true
-
 # board class definition
 class Board
-  @@positions = (1..9).to_a
+  @positions = (1..9).to_a
   def initialize
-    @@positions
+    @positions
   end
 
   def self.draw_board
     "
-    #{@@positions[0]} | #{@@positions[1]} | #{@@positions[2]}
-    ========
-    #{@@positions[3]} | #{@@positions[4]} | #{@@positions[5]}
-    ========
-    #{@@positions[6]} | #{@@positions[7]} | #{@@positions[8]}
+    #{@positions[0]} | #{@positions[1]} | #{@positions[2]}
+    =========
+    #{@positions[3]} | #{@positions[4]} | #{@positions[5]}
+    =========
+    #{@positions[6]} | #{@positions[7]} | #{@positions[8]}
     "
   end
 
@@ -27,7 +25,7 @@ class Board
   end
 
   def self.position_empty?(move)
-    @@positions[move - 1].is_a?(Integer)
+    @positions[move - 1].is_a?(Integer)
   end
 
   def self.game_draw
@@ -39,6 +37,6 @@ class Board
 
     return "Position #{move} has been taken, please select another. >> " unless position_empty?(move)
 
-    @@positions[move - 1] = mark
+    @positions[move - 1] = mark
   end
 end
